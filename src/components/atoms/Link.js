@@ -8,6 +8,7 @@ const Text = styled.a`
 const Link = (props) => {
     return (
         <Text>
+            {/* eslint-disable-next-line react/jsx-no-target-blank */}
             <a href={props.src} target="_blank">{props.text}</a>
         </Text>
     )
