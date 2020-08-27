@@ -1,8 +1,13 @@
-.profile-link {
+.section-title {
+    margin-top: 5px;
+    font-size: 30px;
+}
+
+.link {
     min-height: 100vh;
     font-size: calc(10px + 1vmin);
 }
 
-.profile-image {
+.image {
     margin: 10px 0 0 10px;
 }
