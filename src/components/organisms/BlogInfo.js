@@ -9,7 +9,7 @@ const BlogInfo = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async () => {
         const result = await axios(
-            "http://localhost:8081/hatena/entries",
+            "https://welcome-page-api.herokuapp.com/hatena/entries",
             {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
