@@ -8,9 +8,7 @@ import SideNavi from "./components/organisms/SideNavi";
 function App() {
     return (
         <div className="welcome-page">
-            <div className="sidenav">
-                <SideNavi/>
-            </div>
+            <SideNavi/>
             <div className="contents">
                 <Profile/>
                 <BlogInfo/>

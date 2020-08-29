@@ -3,28 +3,31 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
 background: #3273dc;
-color: white;
 position: fixed;
 z-index: 1;
 top: 0;
 left: 0;
 overflow-x: hidden;
 padding-top: 20px;
-width: 150px;
+width: 170px;
 height: 100vh;
 box-shadow: black 0 0 5px;
 `
 
-const Text = styled.div`
+const Text = styled.a`
+color: white;
 padding-top: 4px;
-padding-left: 30%;
-font-size: 20px;
+padding-left: 33%;
+font-size: 24px;
+tpointer-events: none;
+tcursor: default;
+text-decoration:none;
 `
 
 const SideNavi = (props) => {
     return (
         <Wrapper>
-            <Text>Heno</Text>
+            <Text href="https://hirooka.dev">Heno</Text>
         </Wrapper>
     )
 }

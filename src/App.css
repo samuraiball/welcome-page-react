@@ -1,12 +1,9 @@
-.welcome-page{
-   display: flex;
-}
-
-.sidenav {
-    width: 200px;
+.welcome-page {
+    display: flex;
 }
 
 .contents {
-    margin-left: 20px;
+    margin-left: 200px;
+    margin-bottom: 30px;
 }
 
