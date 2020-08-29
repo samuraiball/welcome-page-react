@@ -6,6 +6,7 @@ import Card from "./Card";
 const BlogInfo = (props) => {
     const [data, setData] = useState({feed: []})
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async () => {
         const result = await axios(
             "https://welcome-page-api.herokuapp.com/hatena/entries",
