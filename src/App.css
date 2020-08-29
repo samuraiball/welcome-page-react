@@ -1,4 +1,12 @@
-.App {
+.welcome-page{
+   display: flex;
+}
+
+.sidenav {
+    width: 200px;
+}
+
+.contents {
     margin-left: 20px;
 }
 
