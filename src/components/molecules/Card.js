@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Tag from "../atoms/Tag";
 
 const Link = styled.a`
 tpointer-events: none;
@@ -15,7 +16,8 @@ border-radius: 2px;
 width: 98%;
 
 &:hover{
-background: #EEEEEE;
+transition: 0.2s ;
+background: #e5e5e5;
 }
 `
 
@@ -31,8 +33,13 @@ margin: 3px 0 0 12px;
 font-size: 14px;
 color: #808080;
 `
+const Tags = styled.div`
+margin-top: 10px;
+margin-left: 10px;
+`
 
 const Card = (props) => {
+    console.log(props)
     return (
         <Link href={props.href} target="_blank">
             <Wrapper>
@@ -40,6 +47,9 @@ const Card = (props) => {
                 <Summary>
                     {props.summary}
                 </Summary>
+                <Tags>
+                    {props.tags.map(t => (<Tag name={t.term}/>))}
+                </Tags>
             </Wrapper>
         </Link>
     )

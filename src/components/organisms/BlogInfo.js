@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import SectionTitle from "../atoms/SectionTitle";
 import axios from 'axios'
-import Card from "./Card";
+import Card from "../molecules/Card";
 
 const BlogInfo = (props) => {
     const [data, setData] = useState({feed: []})
@@ -9,7 +9,7 @@ const BlogInfo = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async () => {
         const result = await axios(
-            "https://welcome-page-api.herokuapp.com/hatena/entries",
+            "http://localhost:8081/hatena/entries",
             {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
@@ -22,7 +22,7 @@ const BlogInfo = (props) => {
     }, []);
 
 
-    console.log(data)
+    //console.log(data)
     return (
 
         <div className="blog-info">
@@ -32,6 +32,7 @@ const BlogInfo = (props) => {
                     href={entry.link.href}
                     title={entry.title}
                     summary={entry.summary}
+                    tags={entry.category === null ? [] : entry.category}
                 />
             ))}
         </div>
