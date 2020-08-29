@@ -19,7 +19,7 @@ function Profile() {
             <div className="links">
                 <SectionTitle>Links</SectionTitle>
                 <ul>
-                    <li><Link text="Twitter" src="https://twitter.com/yuya_hirooka"/></li>
+                    <li><Link text="Twitter" src="https://twitter.com/yuya_hirooka">aaa</Link></li>
                     <li><Link text="GitHub" src="https://github.com/samuraiball"/></li>
                     <li><Link text="はてなブログ" src="https://yuya-hirooka.hatenablog.com/"/></li>
                 </ul>
