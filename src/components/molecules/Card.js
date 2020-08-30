@@ -9,7 +9,7 @@ text-decoration:none;
 `
 
 const Wrapper = styled.div`
-margin: 10px 10px 8px 10px;
+margin: 10px 10px 12px 10px;
 padding-bottom: 10px;
 border: solid 1px #C0C0C0;
 border-radius: 2px;

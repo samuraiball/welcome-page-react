@@ -5,7 +5,6 @@ import Avatar from "../atoms/Avatar";
 import henohenomoheji from "../../assets/img/henohenomoheji.png"
 
 
-
 function Profile() {
     return (
         <div className="profile">
@@ -14,6 +13,9 @@ function Profile() {
                 <SectionTitle>About Me</SectionTitle>
                 <p>
                     Software Engineer at Uzabase
+                </p>
+                <p>
+                    Curious about Java, Linux, Vim, Container Technology, Scrum
                 </p>
             </div>
             <div className="links">
