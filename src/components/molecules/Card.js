@@ -15,6 +15,9 @@ border: solid 1px #C0C0C0;
 border-radius: 2px;
 width: 98%;
 
+& > .PublishedDate{
+text-align: right;
+}
 &:hover{
 transition: 0.2s ;
 background: #e5e5e5;
@@ -33,10 +36,21 @@ margin: 3px 0 0 12px;
 font-size: 14px;
 color: #808080;
 `
-const Tags = styled.div`
+
+const Footer = styled.div`
+margin-top: 5px;
+`
+const Tags = styled.span`
 margin-top: 10px;
 margin-left: 10px;
 `
+
+const PublishDate = styled.span`
+font-size: 15px;
+margin-left: 20px;
+color: #808080;
+`
+
 
 const Card = (props) => {
     console.log(props)
@@ -47,9 +61,14 @@ const Card = (props) => {
                 <Summary>
                     {props.summary}
                 </Summary>
-                <Tags>
-                    {props.tags.map(t => (<Tag name={t.term}/>))}
-                </Tags>
+                <Footer>
+                    <Tags>
+                        {props.tags.map(t => (<Tag name={t.term}/>))}
+                    </Tags>
+                    <PublishDate>
+                        {props.published}
+                    </PublishDate>
+                </Footer>
             </Wrapper>
         </Link>
     )

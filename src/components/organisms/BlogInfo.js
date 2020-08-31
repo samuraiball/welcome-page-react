@@ -31,6 +31,7 @@ const BlogInfo = (props) => {
                     title={entry.title}
                     summary={entry.summary}
                     tags={entry.category === null ? [] : entry.category}
+                    published={entry.published}
                 />
             ))}
         </div>
