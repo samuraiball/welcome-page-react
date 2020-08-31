@@ -6,20 +6,24 @@ import Card from "../molecules/Card";
 const BlogInfo = (props) => {
     const [data, setData] = useState({feed: []})
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(async () => {
-        const result = await axios(
-            "https://welcome-page-api.herokuapp.com/hatena/entries",
-            {
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Methods": "GET",
-                }
-            });
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => {
+            const fetchData = async () => {
+                const result = await axios(
+                    "https://welcome-page-api.herokuapp.com/hatena/entries",
+                    {
+                        headers: {
+                            "Access-Control-Allow-Origin": "*",
+                            "Access-Control-Allow-Methods": "GET",
+                        }
+                    });
 
-        setData(result.data)
-
-    }, []);
+                setData(result.data)
+            };
+            fetchData().then();
+        }, []
+    )
+    ;
 
     return (
 
