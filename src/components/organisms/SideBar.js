@@ -48,7 +48,7 @@ color: white;
 const SideBar = (props) => {
     return (
         <Wrapper>
-            <TopLink to="/"><Text>Hone</Text></TopLink>
+            <TopLink to="/"><Text>Heno</Text></TopLink>
             <ChildLink to="/"><Text>├ About Me</Text></ChildLink>
             <ChildLink to="/blogs"><Text>└ Blogs</Text></ChildLink>
         </Wrapper>

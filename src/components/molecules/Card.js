@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Tag from "../atoms/Tag";
 
-const Link = styled.a`
+const CardLink = styled.a`
 tpointer-events: none;
 tcursor: default;
 text-decoration:none;
@@ -15,9 +15,6 @@ border: solid 1px #C0C0C0;
 border-radius: 2px;
 width: 98%;
 
-& > .PublishedDate{
-text-align: right;
-}
 &:hover{
 transition: 0.2s ;
 background: #e5e5e5;
@@ -55,7 +52,7 @@ color: #808080;
 const Card = (props) => {
     console.log(props)
     return (
-        <Link href={props.href} target="_blank">
+        <CardLink href={props.href} target="_blank">
             <Wrapper>
                 <Title>{props.title}</Title>
                 <Summary>
@@ -70,7 +67,7 @@ const Card = (props) => {
                     </PublishDate>
                 </Footer>
             </Wrapper>
-        </Link>
+        </CardLink>
     )
 }
 

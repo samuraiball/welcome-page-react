@@ -1,15 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 
-const Text = styled.a`
-    font-size: 18px;
+const Text = styled.div`
+margin-top: 10px;
+font-size: 15px;
 `
+
+const Anker = styled.a`
+tpointer-events: none;
+tcursor: default;
+text-decoration:none;
+color: black;
+
+&:hover{
+color: #504e4e;
+}
+
+&>ion-icon{
+vertical-align: -3px;
+margin-right: 2px;
+}
+`
+
 
 const Link = (props) => {
     return (
         <Text>
-            {/* eslint-disable-next-line react/jsx-no-target-blank */}
-            <a href={props.src} target="_blank">{props.text}</a>
+            <Anker href={props.src} target="_blank">
+                <ion-icon name={props.logo} />
+                {props.text}
+            </Anker>
         </Text>
     )
 }
