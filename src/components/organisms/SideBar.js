@@ -36,7 +36,7 @@ margin-top: 8px;
 margin-left: 40px;
 &:hover{
 transition: 0.2s ;
-color: #e5e5e5;
+color: #d4d1d1;
 }
 }
 `

@@ -2,34 +2,74 @@ import React, {useEffect, useState} from "react";
 import SectionTitle from "../atoms/SectionTitle";
 import axios from 'axios'
 import Card from "../molecules/Card";
+import styled from "styled-components";
+
+
+const InputBox = styled.input`
+margin: 20px 0 10px 10px;
+height: 30px;
+width: 250px;
+border-radius: 5px;
+
+::-webkit-input-placeholder {
+font-size: 15px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+font-size: 15px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+font-size: 15px;
+}
+
+:-ms-input-placeholder {  
+font-size: 15px;
+}
+`
 
 const BlogInfo = (props) => {
-    const [data, setData] = useState({feed: []})
+    const [rowData, setRowData] = useState({feed: []})
+    const [filteredData, setFilteredData] = useState([])
+    const [searchTerm, setSearchTerm] = useState("")
 
-    //eslint-disable-next-line react-hooks/exhaustive-deps
+    const handleChange = event => {
+        setSearchTerm(event.target.value)
+    }
+
     useEffect(() => {
-            const fetchData = async () => {
-                const result = await axios(
-                    "https://welcome-page-api.herokuapp.com/hatena/entries",
-                    {
-                        headers: {
-                            "Access-Control-Allow-Origin": "*",
-                            "Access-Control-Allow-Methods": "GET",
-                        }
-                    });
+        const fetchData = async () => {
+            const result = await axios(
+                "https://welcome-page-api.herokuapp.com/hatena/entries",
+                {
+                    headers: {
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Methods": "GET",
+                    }
+                });
 
-                setData(result.data)
-            };
-            fetchData().then();
-        }, []
-    )
-    ;
+            setRowData(result.data)
+            setFilteredData(result.data.feed)
+        };
+        fetchData().then();
+    }, []);
+
+    useEffect(() => {
+        const result = rowData.feed.filter(feed =>
+            feed.title.toLowerCase().includes(searchTerm.toLowerCase()))
+        setFilteredData(result);
+    }, [searchTerm])
+
 
     return (
-
         <div className="blog-info">
             <SectionTitle>Posted Blogs</SectionTitle>
-            {data.feed.map(entry => (
+            <InputBox type="text"
+                      placeholder="Search"
+                      value={searchTerm}
+                      onChange={handleChange}/>
+
+            {filteredData.map(entry => (
                 <Card
                     href={entry.link.href}
                     title={entry.title}
