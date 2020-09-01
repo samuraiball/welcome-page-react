@@ -58,7 +58,7 @@ const BlogInfo = (props) => {
         const result = rowData.feed.filter(feed =>
             feed.title.toLowerCase().includes(searchTerm.toLowerCase()))
         setFilteredData(result);
-    }, [searchTerm])
+    }, [rowData.feed, searchTerm])
 
 
     return (
