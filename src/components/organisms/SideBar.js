@@ -13,6 +13,14 @@ padding-top: 20px;
 width: 170px;
 height: 100vh;
 box-shadow: black 0 0 5px;
+
+@media (max-width: 480px) { 
+position: fixed;
+overflow-x: hidden;
+width: 100vh;
+height: 110px;
+}
+
 `
 
 const TopLink = styled(Link)`

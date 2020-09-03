@@ -11,6 +11,11 @@ height: 30px;
 width: 250px;
 border-radius: 5px;
 
+
+@media (max-width: 480px) {
+margin: 20px 0 10px 0;
+}
+
 ::-webkit-input-placeholder {
 font-size: 15px;
 }
@@ -47,7 +52,7 @@ const BlogInfo = (props) => {
                         "Access-Control-Allow-Methods": "GET",
                     }
                 });
-
+            console.log(result.data)
             setRowData(result.data)
             setFilteredData(result.data.feed)
         };
