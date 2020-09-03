@@ -45,7 +45,7 @@ const BlogInfo = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                "https://welcome-page-api.herokuapp.com/hatena/entries",
+                "http://localhost:8081/hatena/entries",
                 {
                     headers: {
                         "Access-Control-Allow-Origin": "*",
