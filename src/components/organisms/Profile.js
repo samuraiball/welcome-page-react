@@ -1,5 +1,5 @@
 import React from "react";
-import SectionTitle from "../atoms/SectionTitle";
+import SectionTitle from "../molecules/SectionTitle";
 import Link from "../atoms/Link";
 import Avatar from "../atoms/Avatar";
 import henohenomoheji from "../../assets/img/henohenomoheji.png"
