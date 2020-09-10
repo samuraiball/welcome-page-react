@@ -21,7 +21,6 @@ const BlogInfo = (props) => {
         <div className="blog-info">
             <SectionTitle>Posted Blogs</SectionTitle>
             <BlogSearchBox searchTerm={state.searchTerm} dispatch={dispatch}/>
-
             {state.filteredBlogs.feed.map(entry => (
                 <Card
                     href={entry.link.href}

@@ -1,15 +1,17 @@
 import axios from "axios";
+import Config from "../Config";
 
 class WelcomePageApi {
     async fetchBlogs() {
         return axios(
-            "https://welcome-page-api.herokuapp.com/hatena/entries",
+            Config().welcomePageEndpoint + "/hatena/entries",
             {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "GET",
                 }
-            });
+            }
+        );
     }
 }
 
