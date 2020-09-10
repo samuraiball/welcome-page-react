@@ -50,7 +50,6 @@ margin: 0 0 0 10px;
 `
 
 const Card = (props) => {
-    console.log(props)
     return (
         <CardLink href={props.href} target="_blank">
             <Wrapper>

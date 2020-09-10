@@ -20,7 +20,6 @@ overflow-x: hidden;
 width: 100vh;
 height: 110px;
 }
-
 `
 
 const TopLink = styled(Link)`
@@ -42,10 +41,10 @@ text-decoration: none;
 &>*{
 margin-top: 8px;
 margin-left: 40px;
-&:hover{
-transition: 0.2s ;
-color: #d4d1d1;
-}
+  &:hover{
+   transition: 0.2s ;
+   color: #d4d1d1;
+  }
 }
 `
 
@@ -55,7 +54,7 @@ color: white;
 
 const SideBar = (props) => {
     return (
-        <Wrapper>
+        <Wrapper id="nav">
             <TopLink to="/"><Text>Heno</Text></TopLink>
             <ChildLink to="/"><Text>├ About Me</Text></ChildLink>
             <ChildLink to="/blogs"><Text>└ Blogs</Text></ChildLink>

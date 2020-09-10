@@ -1,80 +1,28 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useReducer} from "react";
 import SectionTitle from "../atoms/SectionTitle";
-import axios from 'axios'
 import Card from "../molecules/Card";
-import styled from "styled-components";
-
-
-const InputBox = styled.input`
-margin: 20px 0 10px 10px;
-height: 30px;
-width: 250px;
-border-radius: 5px;
-
-
-@media (max-width: 480px) {
-margin: 20px 0 10px 0;
-}
-
-::-webkit-input-placeholder {
-font-size: 15px;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-font-size: 15px;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-font-size: 15px;
-}
-
-:-ms-input-placeholder {  
-font-size: 15px;
-}
-`
+import BlogsReducer from "../../lib/reducer/BlogsReducer";
+import BlogSearchBox from "../molecules/BlogSearchBox";
+import BlogsState from "../state/BlogsState";
+import WelcomePageApi from "../../lib/dirver/WelcomePageApi";
 
 const BlogInfo = (props) => {
-    const [rowData, setRowData] = useState({feed: []})
-    const [filteredData, setFilteredData] = useState([])
-    const [searchTerm, setSearchTerm] = useState("")
-
-    const handleChange = event => {
-        setSearchTerm(event.target.value)
-    }
+    const [state, dispatch] = useReducer(BlogsReducer, [], BlogsState)
 
     useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios(
-                "https://welcome-page-api.herokuapp.com/hatena/entries",
-                {
-                    headers: {
-                        "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Methods": "GET",
-                    }
-                });
-            console.log(result.data)
-            setRowData(result.data)
-            setFilteredData(result.data.feed)
-        };
-        fetchData().then();
-    }, []);
-
-    useEffect(() => {
-        const result = rowData.feed.filter(feed =>
-            feed.title.toLowerCase().includes(searchTerm.toLowerCase()))
-        setFilteredData(result);
-    }, [rowData.feed, searchTerm])
-
+        const fetchBlogs = async () => {
+            const result = await new WelcomePageApi().fetchBlogs();
+            dispatch({type: 'fetchBlogs', payload: result.data})
+        }
+        fetchBlogs().then();
+    }, [])
 
     return (
         <div className="blog-info">
             <SectionTitle>Posted Blogs</SectionTitle>
-            <InputBox type="text"
-                      placeholder="Search"
-                      value={searchTerm}
-                      onChange={handleChange}/>
+            <BlogSearchBox searchTerm={state.searchTerm} dispatch={dispatch}/>
 
-            {filteredData.map(entry => (
+            {state.filteredBlogs.feed.map(entry => (
                 <Card
                     href={entry.link.href}
                     title={entry.title}
