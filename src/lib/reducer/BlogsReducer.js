@@ -1,13 +1,11 @@
-
 const BlogsReducer = (state, action) => {
     switch (action.type) {
         case 'filterBlogs':
             return {
                 searchTerm: action.newWord,
                 rowBlogs: state.rowBlogs,
-                filteredBlogs: {feed:
-                        state.rowBlogs.feed.filter(feed =>
-                            feed.title.toLowerCase().includes(action.newWord.toLowerCase()))
+                filteredBlogs: {
+                    feed: filterBlogs(state.rowBlogs, action.newWord)
                 }
             }
         case 'fetchBlogs':
@@ -19,6 +17,11 @@ const BlogsReducer = (state, action) => {
         default:
             throw new Error()
     }
+}
+
+const filterBlogs = (rowBlogs ,condition) => {
+    return rowBlogs.feed.filter(feed =>
+        feed.title.toLowerCase().includes(condition.toLowerCase()))
 }
 
 export default BlogsReducer

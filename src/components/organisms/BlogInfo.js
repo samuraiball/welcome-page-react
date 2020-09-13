@@ -5,7 +5,7 @@ import BlogsReducer from "../../lib/reducer/BlogsReducer";
 import BlogSearchBox from "../molecules/BlogSearchBox";
 import BlogsState from "../state/BlogsState";
 import WelcomePageApi from "../../lib/dirver/WelcomePageApi";
-import Count from "../molecules/Count";
+import Count from "../atoms/Count";
 import styled from "styled-components";
 
 const BlogCount = styled(Count)`
