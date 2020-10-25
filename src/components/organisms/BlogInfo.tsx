@@ -3,28 +3,36 @@ import SectionTitle from "../molecules/SectionTitle";
 import Card from "../molecules/Card";
 import BlogsReducer from "../../lib/reducer/BlogsReducer";
 import BlogSearchBox from "../molecules/BlogSearchBox";
-import BlogsState from "../state/BlogsState";
 import WelcomePageApi from "../../lib/dirver/WelcomePageApi";
 import Count from "../atoms/Count";
 import styled from "styled-components";
+import {BlogsState} from "../state/BlogsState";
 
 const BlogCount = styled(Count)`
 `
 
-const BlogInfo = (props) => {
-    const [state, dispatch] = useReducer(BlogsReducer, [], BlogsState)
+
+const blogsState: BlogsState = {
+    //searchCondition: { searchTerm: "", tags: [] },
+    searchTerm: "",
+    rowBlogs: {feed: []},
+    filteredBlogs: {feed: []},
+};
+
+const BlogInfo = () => {
+    const [state, dispatch] = useReducer(BlogsReducer, blogsState)
 
     useEffect(() => {
         const fetchBlogs = async () => {
             const result = await new WelcomePageApi().fetchBlogs();
-            dispatch({type: 'fetchBlogs', payload: result.data})
+            dispatch({type: `fetchBlogs`, newWord: "", payload: result.data})
         }
         fetchBlogs().then();
     }, [])
 
     return (
         <div className="blog-info">
-            <SectionTitle>Posted Blogs</SectionTitle>
+            <SectionTitle text="Posted Blogs" />
             <BlogSearchBox searchTerm={state.searchTerm} dispatch={dispatch}/>
             <BlogCount number={state.filteredBlogs.feed.length}/>
 

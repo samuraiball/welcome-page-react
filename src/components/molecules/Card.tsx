@@ -49,7 +49,19 @@ margin: 0 0 0 10px;
 }
 `
 
-const Card = (props) => {
+type Props = {
+    href: string
+    title: string
+    summary: string
+    tags: Term[]
+    published: string
+}
+
+type Term = {
+   term: string
+}
+
+const Card = (props: Props) => {
     return (
         <CardLink href={props.href} target="_blank">
             <Wrapper>

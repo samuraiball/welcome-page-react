@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
@@ -52,7 +52,7 @@ const Text = styled.div`
 color: white;
 `
 
-const SideBar = (props) => {
+const SideBar = () => {
     return (
         <Wrapper id="nav">
             <TopLink to="/"><Text>Heno</Text></TopLink>

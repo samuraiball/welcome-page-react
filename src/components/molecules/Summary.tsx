@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "styled-components";
+import React from "react";
 
 const Wrapper = styled.div`
 margin: 3px 10px 0 12px;
@@ -7,7 +7,12 @@ font-size: 14px;
 color: #808080;
 `
 
-const Summary = (props) => {
+type Props = {
+    text: string
+}
+
+
+const Summary = (props: Props) => {
     return (
         <Wrapper>
             {props.text}

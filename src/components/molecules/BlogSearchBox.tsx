@@ -1,5 +1,6 @@
-import React from "react";
+import React, {Dispatch} from "react";
 import styled from "styled-components";
+import {BlogsAction} from "../../lib/reducer/actions/BlogsAction";
 
 const Wrapper = styled.input`
 margin: 20px 0 10px 10px;
@@ -29,11 +30,17 @@ font-size: 15px;
 }
 `
 
-const handleChange = (event, dispatch) => {
-    dispatch({type: "filterBlogs", newWord: event.target.value})
+type Props = {
+    searchTerm: string,
+    dispatch: any
 }
 
-const BlogSearchBox = (props) => {
+const handleChange = (event: React.ChangeEvent<HTMLInputElement>, dispatch: Dispatch<BlogsAction>) => {
+    console.log(dispatch)
+    dispatch({type: "filterBlogs", newWord: event.target.value, payload: []})
+}
+
+const BlogSearchBox = (props: Props) => {
     return <Wrapper type="text"
                     placeholder="Search"
                     value={props.searchTerm}

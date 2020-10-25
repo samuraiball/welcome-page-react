@@ -14,7 +14,7 @@ function Profile() {
         <div className="profile">
             <Avatar src={henohenomoheji}/>
             <div>
-                <SectionTitle>About Me</SectionTitle>
+                <SectionTitle text="About Me"/>
                 <p>
                     Software Engineer at Uzabase
                 </p>
@@ -23,7 +23,7 @@ function Profile() {
                 </p>
             </div>
             <div className="links">
-                <SectionTitle>Links</SectionTitle>
+                <SectionTitle text="Links"/>
                 <ProfileLink text="Twitter"
                              logo="logo-twitter"
                              src="https://twitter.com/yuya_hirooka"/>

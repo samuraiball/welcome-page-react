@@ -7,10 +7,14 @@ font-size: 25px;
 margin-left: 10px;
 vertical-align: -3px;
 `
-const Count = (props) => {
-   return (
-      <Wrapper>{props.number}件</Wrapper>
-   )
+
+type Props = {
+    number: number
+}
+const Count = (props: Props) => {
+    return (
+        <Wrapper>{props.number}件</Wrapper>
+    )
 }
 
 export default Count

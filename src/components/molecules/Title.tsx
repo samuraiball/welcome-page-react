@@ -7,7 +7,12 @@ font-weight: bold;
 color: black;
 margin: 0 10px 0 10px;
 `
-const Title = (props) => {
+
+type Props = {
+    text: string
+}
+
+const Title = (props: Props) => {
     return (
         <Wrapper>
             {props.text}

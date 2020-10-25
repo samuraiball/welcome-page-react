@@ -5,7 +5,11 @@ const Image = styled.img`
     height: 150px;
 `
 
-const Avatar = (props) => {
+type Props = {
+    src: string
+}
+
+const Avatar = (props: Props) => {
     return (
         <Image src={props.src}/>
     )

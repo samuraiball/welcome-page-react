@@ -11,12 +11,15 @@ color: white;
 margin-left: 5px;
 `
 
-const Tag = (props) => {
-   return(
-       <Wrapper>
-           {props.name}
-       </Wrapper>
-   )
+type Props = {
+    name: string
+}
+const Tag = (props: Props) => {
+    return (
+        <Wrapper>
+            {props.name}
+        </Wrapper>
+    )
 }
 
 export default Tag
