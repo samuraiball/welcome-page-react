@@ -58,7 +58,7 @@ type Props = {
 }
 
 type Term = {
-   term: string
+    term: string
 }
 
 const Card = (props: Props) => {

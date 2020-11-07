@@ -32,7 +32,7 @@ const BlogInfo = () => {
 
     return (
         <div className="blog-info">
-            <SectionTitle text="Posted Blogs" />
+            <SectionTitle text="Posted Blogs"/>
             <BlogSearchBox searchTerm={state.searchTerm} dispatch={dispatch}/>
             <BlogCount number={state.filteredBlogs.feed.length}/>
 
