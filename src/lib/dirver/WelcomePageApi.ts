@@ -13,6 +13,19 @@ class WelcomePageApi {
             }
         );
     }
+
+    async fetchBlogStatistics(){
+        return axios(
+            Config().welcomePageEndpoint + "/hatena/statics",
+            {
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET",
+                }
+            }
+        );
+
+    }
 }
 
 export default WelcomePageApi

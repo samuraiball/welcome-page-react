@@ -25,3 +25,12 @@ export type Link = {
 export type Category = {
     term: string
 }
+
+export type BlogStatistics = {
+    data: CategoryStatistics[]
+}
+
+export type CategoryStatistics = {
+    title: string
+    value: number
+}

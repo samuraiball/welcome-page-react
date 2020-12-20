@@ -11,9 +11,7 @@ import {BlogsState} from "../state/BlogsState";
 const BlogCount = styled(Count)`
 `
 
-
 const blogsState: BlogsState = {
-    //searchCondition: { searchTerm: "", tags: [] },
     searchTerm: "",
     rowBlogs: {feed: []},
     filteredBlogs: {feed: []},
@@ -25,7 +23,7 @@ const BlogInfo = () => {
     useEffect(() => {
         const fetchBlogs = async () => {
             const result = await new WelcomePageApi().fetchBlogs();
-            dispatch({type: `fetchBlogs`, newWord: "", payload: result.data})
+            dispatch({type: `fetchBlogs`, newWord: '', payload: result.data})
         }
         fetchBlogs().then();
     }, [])

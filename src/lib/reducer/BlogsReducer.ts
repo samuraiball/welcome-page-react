@@ -1,6 +1,7 @@
 import {Article, BlogsState, Feed} from "../../components/state/BlogsState";
 import {BlogsAction} from "./actions/BlogsAction";
 
+
 const BlogsReducer = (state: BlogsState, action: BlogsAction): BlogsState => {
     switch (action.type) {
         case 'filterBlogs':
