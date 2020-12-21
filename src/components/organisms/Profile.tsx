@@ -7,7 +7,9 @@ import styled from "styled-components";
 import BarChart from "../molecules/BarChart";
 import BlogStatisticsReducer from "../../lib/reducer/BlogStatisticsReducer";
 import WelcomePageApi from "../../lib/dirver/WelcomePageApi";
-import {BlogStatistics} from "../state/BlogsState";
+import {BlogsState, BlogStatistics} from "../state/BlogsState";
+import BlogsReducer from "../../lib/reducer/BlogsReducer";
+import Card from "../molecules/Card";
 
 
 const ProfileLink = styled(Link)`
@@ -19,20 +21,51 @@ margin-left: 10px;
 margin-left: 0;
 }
 `
+const Title = styled.div`
+font-size: 23px;
+margin-top: 3px;
+margin-bottom: 7px;
+`
 
-const initData: BlogStatistics = {data: []}
+const BlogStatisticsContainer = styled.div`
+width: 1000px;
+display: flex;
+
+@media (max-width: 480px) { 
+width: auto;
+display: block;
+}
+`
+
+const CardContainer = styled.div`
+margin-left: -10px;
+
+@media (max-width: 480px) { 
+margin: 0 5px 0 -5px;
+}
+`
+
+const initStatistics: BlogStatistics = {data: []}
+
+const blogsState: BlogsState = {
+    searchTerm: "",
+    rowBlogs: {feed: []},
+    filteredBlogs: {feed: []},
+};
 
 function Profile() {
 
-    const [state, dispatch] = useReducer(BlogStatisticsReducer, initData)
+    const [blogStatistics, dispatchStatistics] = useReducer(BlogStatisticsReducer, initStatistics)
+    const [blogs, dispatchBlogs] = useReducer(BlogsReducer, blogsState)
 
     useEffect(() => {
-        const fetchStatistics = async () => {
-            const result = await new WelcomePageApi().fetchBlogStatistics();
-            console.log(result.data)
-            dispatch({type: 'fetchStatistics', payload: result.data})
+        const fetchData = async () => {
+            const statistics = await new WelcomePageApi().fetchBlogStatistics();
+            const blogs = await new WelcomePageApi().fetchBlogs();
+            dispatchBlogs({type: `fetchBlogs`, newWord: '', payload: blogs.data});
+            dispatchStatistics({type: 'fetchStatistics', payload: statistics.data});
         }
-        fetchStatistics().then()
+        fetchData().then()
     }, [])
 
     return (
@@ -59,12 +92,26 @@ function Profile() {
                                  src="https://yuya-hirooka.hatenablog.com/"/>
                 </Contents>
             </div>
-            <div className="blog-statistics">
-                <SectionTitle text="Blog Statistics"/>
+            <SectionTitle text="Blog Statistics"/>
+            <BlogStatisticsContainer>
                 <Contents>
-                    <BarChart graphTitle="Top 10 Tags" data={state.data}/>
+                    <Title>Latest Posts</Title>
+                    <CardContainer>
+                        {blogs.filteredBlogs.feed.slice(0, 3).map(entry => (
+                            <Card
+                                href={entry.link.href}
+                                title={entry.title}
+                                summary=""
+                                tags={entry.category === null ? [] : entry.category}
+                                published={entry.published}
+                            />
+                        ))}
+                    </CardContainer>
                 </Contents>
-            </div>
+                <Contents>
+                    <BarChart graphTitle="Top 10 Tags" data={blogStatistics.data}/>
+                </Contents>
+            </BlogStatisticsContainer>
         </div>
     )
 }

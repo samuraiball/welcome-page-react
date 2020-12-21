@@ -16,7 +16,7 @@ const Bar = styled.div`
 --size:  ${({theme}) => theme.value};
 height: 20px;
 margin-right: 4px;
-background-color: #3273dc;;
+background-color: #3273dc;
 border-radius: 3px;
 opacity: ${({theme}) => theme.opacity};
 animation: SlideIn 2s;
@@ -59,26 +59,24 @@ type Data = {
 
 const BarChart = (props: Props) => {
 
-    // const sumOfValue = props.data
-    //     .slice(0, 10)
-    //     .map(e => e.value)
-    //     .reduce((acm, data) => acm + data, 0)
+    const sortedData = props.data
+        .sort((a, b) => a.value < b.value ? 1 : -1)
+        .slice(0, 10)
 
-    const num = props.data.sort((a, b) => a.value < b.value ? 1 : -1)[0]
+    const maxValue = sortedData[0]
 
     return (
         <Wrapper>
             <Title>{props.graphTitle}</Title>
-            {props.data.sort((a, b) => a.value < b.value ? 1 : -1)
-                .slice(0, 10)
+            {sortedData
                 .map(e =>
                     <div>
                         <Contents>
                             <Item>{e.title}</Item>
                             <BarWrapper>
                                 <Bar theme={{
-                                    opacity: (e.value / num.value * 100) + '%',
-                                    value: (e.value / num.value * 100) + '%'
+                                    opacity: (e.value / maxValue.value * 100) + '%',
+                                    value: (e.value / maxValue.value * 100) + '%'
                                 }}/>
                                 <div>{e.value}</div>
                             </BarWrapper>

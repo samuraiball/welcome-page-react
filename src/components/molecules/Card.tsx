@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Tag from "../atoms/Tag";
-import Summary from "./Summary";
-import Title from "./Title";
+import Summary from "../atoms/Summary";
+import Title from "../atoms/Title";
 
 const CardLink = styled.a`
 tpointer-events: none;
