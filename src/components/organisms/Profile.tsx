@@ -41,7 +41,7 @@ display: flex;
 
 const CardContainer = styled.div`
 margin-left: -10px;
-animation: SlideCardIn 0.7s;
+animation: SlideCardIn 1.5s;
 
 @media (max-width: 480px) { 
   margin: 0 5px 0 -5px;
