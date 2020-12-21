@@ -16,6 +16,7 @@ margin-top: 10px;
 `
 
 const Contents = styled.div`
+width: auto;
 margin-left: 10px;
 
 & > p{
@@ -25,6 +26,7 @@ margin-left: 10px;
 
 @media (max-width: 480px) { 
   margin-left: 0;
+  
 }
 `
 
@@ -33,10 +35,14 @@ width: 478px;
 font-size: 23px;
 margin-top: 10px;
 margin-bottom: 7px;
+
+@media (max-width: 480px) { 
+  width: auto;
+}
 `
 
 const BlogStatisticsContainer = styled.div`
-width: 1000px;
+width: 1024px;
 display: flex;
 
 @media (max-width: 480px) { 
@@ -50,7 +56,7 @@ margin-left: -10px;
 animation: SlideCardIn 1.5s;
 
 @media (max-width: 480px) { 
-  margin: 0 5px 0 -5px;
+  margin-left: -5px;
 }
 
 @keyframes  SlideCardIn {

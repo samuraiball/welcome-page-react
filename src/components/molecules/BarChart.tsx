@@ -3,11 +3,9 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
 margin-top: 10px;
-width: 400px;
 `
 
 const Contents = styled.div`
-width: 400px;
 display: flex;
 margin-bottom: 5px;
 margin-left: 5px;
