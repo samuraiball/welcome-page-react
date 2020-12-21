@@ -19,7 +19,7 @@ margin-right: 4px;
 background-color: #3273dc;
 border-radius: 3px;
 opacity: ${({theme}) => theme.opacity};
-animation: SlideIn 2s;
+animation: SlideIn 1.8s;
 width: var( --size);
 
 @keyframes  SlideIn {

@@ -11,19 +11,21 @@ import {BlogsState, BlogStatistics} from "../state/BlogsState";
 import BlogsReducer from "../../lib/reducer/BlogsReducer";
 import Card from "../molecules/Card";
 
-
 const ProfileLink = styled(Link)`
 margin-top: 10px;
 `
+
 const Contents = styled.div`
 margin-left: 10px;
 @media (max-width: 480px) { 
-margin-left: 0;
+  margin-left: 0;
 }
 `
+
 const Title = styled.div`
+width: 478px;
 font-size: 23px;
-margin-top: 3px;
+margin-top: 10px;
 margin-bottom: 7px;
 `
 
@@ -32,16 +34,28 @@ width: 1000px;
 display: flex;
 
 @media (max-width: 480px) { 
-width: auto;
-display: block;
+  width: auto;
+  display: block;
 }
 `
 
 const CardContainer = styled.div`
 margin-left: -10px;
+animation: SlideCardIn 0.7s;
 
 @media (max-width: 480px) { 
-margin: 0 5px 0 -5px;
+  margin: 0 5px 0 -5px;
+}
+
+@keyframes  SlideCardIn {
+  0% {
+   opacity: 0; 
+   transform: translateY(-5px);
+  }
+  100% {
+   opacity: 1; 
+   transform: translateY(0);
+  }
 }
 `
 

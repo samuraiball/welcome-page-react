@@ -25,6 +25,8 @@ background: #e5e5e5;
 margin: 0 0 10px 0;
 padding-bottom: 5px;
 }
+
+
 `
 
 const Footer = styled.div`
