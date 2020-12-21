@@ -17,6 +17,12 @@ margin-top: 10px;
 
 const Contents = styled.div`
 margin-left: 10px;
+
+& > p{
+  margin: 5px 0 0 0;
+  line-height: 1.7rem;
+}
+
 @media (max-width: 480px) { 
   margin-left: 0;
 }
@@ -88,8 +94,10 @@ function Profile() {
             <div>
                 <SectionTitle text="About Me"/>
                 <Contents>
-                    <p>Software Engineer at Uzabase</p>
-                    <p>Curious about Java, Linux, Vim, Container Technology, Scrum</p>
+                    <p>
+                        Software Engineer at Uzabase.<br/>
+                        Curious about Java, Linux, Vim, Container Technology and Scrum.
+                    </p>
                 </Contents>
             </div>
             <div className="links">
