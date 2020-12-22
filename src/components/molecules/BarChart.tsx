@@ -14,7 +14,7 @@ const Bar = styled.div`
 --size:  ${({theme}) => theme.value};
 height: 20px;
 margin-right: 4px;
-background-color: #3273dc;
+background: #004643;
 border-radius: 3px;
 opacity: ${({theme}) => theme.opacity};
 animation: SlideIn 1.8s;

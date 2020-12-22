@@ -10,10 +10,10 @@ const Anker = styled.a`
 tpointer-events: none;
 tcursor: default;
 text-decoration:none;
-color: black;
+color: #004643;
 
 &:hover{
-color: #504e4e;
+color: #f9bc60; 
 }
 
 &>ion-icon{

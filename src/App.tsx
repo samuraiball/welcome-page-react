@@ -4,10 +4,8 @@ import './App.css';
 import Profile from "./components/organisms/Profile";
 import BlogInfo from "./components/organisms/BlogInfo";
 import SideBar from "./components/organisms/SideBar";
-
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Helmet} from "react-helmet";
-
 
 function App() {
     return (

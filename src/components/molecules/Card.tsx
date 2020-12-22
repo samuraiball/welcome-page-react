@@ -18,7 +18,7 @@ border-radius: 2px;
 
 &:hover{
 transition: 0.2s ;
-background: #e5e5e5;
+background: #f8ca8d;
 }
 
 @media (max-width: 480px) {

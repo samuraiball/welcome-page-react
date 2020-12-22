@@ -2,8 +2,25 @@ import React from 'react';
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
+
+
+const XSlidInContainer = styled.div`
+animation:  XSlideIn 1s;
+
+@keyframes  XSlideIn {
+  0% {
+   opacity: 0; 
+   transform: translateX(-20px);
+  }
+  100% {
+   opacity: 1; 
+   transform: translateX(0);
+  }
+}
+`
+
 const Wrapper = styled.div`
-background: #3273dc;
+background: #004643;
 position: fixed;
 z-index: 1;
 top: 0;
@@ -56,8 +73,10 @@ const SideBar = () => {
     return (
         <Wrapper id="nav">
             <TopLink to="/"><Text>Heno</Text></TopLink>
-            <ChildLink to="/"><Text>├ About Me</Text></ChildLink>
-            <ChildLink to="/blogs"><Text>└ Blogs</Text></ChildLink>
+            <XSlidInContainer>
+                <ChildLink to="/"><Text>├ About Me</Text></ChildLink>
+                <ChildLink to="/blogs"><Text>└ Blogs</Text></ChildLink>
+            </XSlidInContainer>
         </Wrapper>
     )
 }

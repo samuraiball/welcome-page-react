@@ -6,7 +6,7 @@ const Wrapper = styled.span`
 border-radius: 5px;
 padding: 2px 6px 2px 6px;
 font-size: 12px;
-background: #3273dc;
+background: #004643;
 color: white;
 margin-left: 5px;
 `
