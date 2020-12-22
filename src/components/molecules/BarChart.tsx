@@ -39,14 +39,8 @@ const Item = styled.div`
 width: 40%;
 font-size: 14px;
 `
-const Title = styled.div`
-font-size: 23px;
-margin-bottom: 7px;
-`
-
 
 type Props = {
-    graphTitle: string
     data: Data[]
 }
 
@@ -65,7 +59,6 @@ const BarChart = (props: Props) => {
 
     return (
         <Wrapper>
-            <Title>{props.graphTitle}</Title>
             {sortedData
                 .map(e =>
                     <div>

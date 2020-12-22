@@ -11,6 +11,38 @@ import {BlogsState, BlogStatistics} from "../state/BlogsState";
 import BlogsReducer from "../../lib/reducer/BlogsReducer";
 import Card from "../molecules/Card";
 
+
+const XSlidInContainer = styled.div`
+animation:  XSlideIn 1s;
+
+@keyframes  XSlideIn {
+  0% {
+   opacity: 0; 
+   transform: translateX(-20px);
+  }
+  100% {
+   opacity: 1; 
+   transform: translateX(0);
+  }
+}
+`
+
+const YSlideInContaier = styled.div`
+animation:  ScaleIn 1s;
+
+@keyframes  ScaleIn {
+  0% {
+   opacity: 0; 
+   transform: translateY(-20px);
+  }
+  100% {
+   opacity: 1; 
+   transform: translateY(0px);
+  }
+}
+`
+
+
 const ProfileLink = styled(Link)`
 margin-top: 10px;
 `
@@ -71,6 +103,7 @@ animation: SlideCardIn 1.5s;
 }
 `
 
+
 const initStatistics: BlogStatistics = {data: []}
 
 const blogsState: BlogsState = {
@@ -96,34 +129,40 @@ function Profile() {
 
     return (
         <div className="profile">
-            <Avatar src={henohenomoheji}/>
-            <div>
-                <SectionTitle text="About Me"/>
-                <Contents>
-                    <p>
-                        Software Engineer at Uzabase.<br/>
-                        Curious about Java, Linux, Vim, Container Technology and Scrum.
-                    </p>
-                </Contents>
-            </div>
-            <div className="links">
-                <SectionTitle text="Links"/>
-                <Contents>
-                    <ProfileLink text="Twitter"
-                                 logo="logo-twitter"
-                                 src="https://twitter.com/yuya_hirooka"/>
-                    <ProfileLink text="GitHub"
-                                 logo="logo-github"
-                                 src="https://github.com/samuraiball"/>
-                    <ProfileLink text="はてなブログ"
-                                 logo="pencil-outline"
-                                 src="https://yuya-hirooka.hatenablog.com/"/>
-                </Contents>
-            </div>
-            <SectionTitle text="Blog Statistics"/>
+            <XSlidInContainer>
+                <Avatar src={henohenomoheji}/>
+                <div>
+                    <SectionTitle text="About Me"/>
+                    <Contents>
+                        <p>
+                            Software Engineer at Uzabase.<br/>
+                            Curious about Java, Linux, Vim, Container Technology and Scrum.
+                        </p>
+                    </Contents>
+                </div>
+                <div className="links">
+                    <SectionTitle text="Links"/>
+                    <Contents>
+                        <ProfileLink text="Twitter"
+                                     logo="logo-twitter"
+                                     src="https://twitter.com/yuya_hirooka"/>
+                        <ProfileLink text="GitHub"
+                                     logo="logo-github"
+                                     src="https://github.com/samuraiball"/>
+                        <ProfileLink text="はてなブログ"
+                                     logo="pencil-outline"
+                                     src="https://yuya-hirooka.hatenablog.com/"/>
+                    </Contents>
+                </div>
+            </XSlidInContainer>
+            <YSlideInContaier>
+                <SectionTitle text="Blog Statistics"/>
+            </YSlideInContaier>
             <BlogStatisticsContainer>
                 <Contents>
-                    <Title>Latest Posts</Title>
+                    <YSlideInContaier>
+                        <Title>Latest Posts</Title>
+                    </YSlideInContaier>
                     <CardContainer>
                         {blogs.filteredBlogs.feed.slice(0, 3).map(entry => (
                             <Card
@@ -137,7 +176,10 @@ function Profile() {
                     </CardContainer>
                 </Contents>
                 <Contents>
-                    <BarChart graphTitle="Top 10 Tags" data={blogStatistics.data}/>
+                    <YSlideInContaier>
+                        <Title>Top 10 Tags</Title>
+                    </YSlideInContaier>
+                    <BarChart data={blogStatistics.data}/>
                 </Contents>
             </BlogStatisticsContainer>
         </div>

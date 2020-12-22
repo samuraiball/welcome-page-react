@@ -11,6 +11,36 @@ import {BlogsState} from "../state/BlogsState";
 const BlogCount = styled(Count)`
 `
 
+const XSlidInContainer = styled.div`
+animation:  XSlideIn 1s;
+
+@keyframes  XSlideIn {
+  0% {
+   opacity: 0; 
+   transform: translateX(-20px);
+  }
+  100% {
+   opacity: 1; 
+   transform: translateX(0);
+  }
+}
+`
+
+const YSlideInContaier = styled.div`
+animation:  ScaleIn 1s;
+
+@keyframes  ScaleIn {
+  0% {
+   opacity: 0; 
+   transform: translateY(-20px);
+  }
+  100% {
+   opacity: 1; 
+   transform: translateY(0px);
+  }
+}
+`
+
 const blogsState: BlogsState = {
     searchTerm: "",
     rowBlogs: {feed: []},
@@ -30,19 +60,22 @@ const BlogInfo = () => {
 
     return (
         <div className="blog-info">
-            <SectionTitle text="Posted Blogs"/>
-            <BlogSearchBox searchTerm={state.searchTerm} dispatch={dispatch}/>
-            <BlogCount number={state.filteredBlogs.feed.length}/>
-
-            {state.filteredBlogs.feed.map(entry => (
-                <Card
-                    href={entry.link.href}
-                    title={entry.title}
-                    summary={entry.summary}
-                    tags={entry.category === null ? [] : entry.category}
-                    published={entry.published}
-                />
-            ))}
+            <XSlidInContainer>
+                <SectionTitle text="Posted Blogs"/>
+                <BlogSearchBox searchTerm={state.searchTerm} dispatch={dispatch}/>
+                <BlogCount number={state.filteredBlogs.feed.length}/>
+            </XSlidInContainer>
+            <YSlideInContaier>
+                {state.filteredBlogs.feed.map(entry => (
+                    <Card
+                        href={entry.link.href}
+                        title={entry.title}
+                        summary={entry.summary}
+                        tags={entry.category === null ? [] : entry.category}
+                        published={entry.published}
+                    />
+                ))}
+            </YSlideInContaier>
         </div>
     )
 }
