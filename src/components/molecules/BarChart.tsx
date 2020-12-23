@@ -13,12 +13,12 @@ margin-left: 5px;
 const Bar = styled.div`
 --size:  ${({theme}) => theme.value};
 height: 20px;
+width: var( --size);
 margin-right: 4px;
 background: #004643;
 border-radius: 3px;
 opacity: ${({theme}) => theme.opacity};
 animation: SlideIn 1.8s;
-width: var( --size);
 
 @keyframes  SlideIn {
   0% {
