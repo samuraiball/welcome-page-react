@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 
 const FaceLine = styled.div`
-z-index: 0;
-position: relative;
-height: 100px;
-width: 200px;
-border: black solid 1px;
-background-color: black;
-border-bottom: 200px solid black;
-border-radius: 0 0 0 60%;
+  z-index: 0;
+  position: relative;
+  height: 100px;
+  width: 200px;
+  border: black solid 1px;
+  background-color: black;
+  border-bottom: 200px solid black;
+  border-radius: 0 0 0 60%;
 
   &:before {
     content: "";
@@ -26,20 +26,20 @@ border-radius: 0 0 0 60%;
 `
 
 const Eye = styled.div`
-position: relative;
-top: 20px;
-left: 20px;
-height: 60px;
-width: 80px;
-background-color: black;
-border-radius: 100px  100px 100px 100px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  height: 60px;
+  width: 80px;
+  background-color: black;
+  border-radius: 100px 100px 100px 100px;
 
-  &:before{
+  &:before {
     content: "";
     position: absolute;
     top: 10px;
     left: 10px;
-    
+
     height: 10px;
     width: 10px;
     background-color: white;

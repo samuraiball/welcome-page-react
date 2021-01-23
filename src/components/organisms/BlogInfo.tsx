@@ -12,33 +12,33 @@ const BlogCount = styled(Count)`
 `
 
 const XSlidInContainer = styled.div`
-animation:  XSlideIn 1s;
+  animation: XSlideIn 1s;
 
-@keyframes  XSlideIn {
-  0% {
-   opacity: 0; 
-   transform: translateX(-20px);
+  @keyframes XSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  100% {
-   opacity: 1; 
-   transform: translateX(0);
-  }
-}
 `
 
 const YSlideInContaier = styled.div`
-animation:  ScaleIn 1s;
+  animation: ScaleIn 1s;
 
-@keyframes  ScaleIn {
-  0% {
-   opacity: 0; 
-   transform: translateY(-20px);
+  @keyframes ScaleIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
-  100% {
-   opacity: 1; 
-   transform: translateY(0px);
-  }
-}
 `
 
 const blogsState: BlogsState = {

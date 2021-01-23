@@ -10,38 +10,8 @@ import WelcomePageApi from "../../lib/dirver/WelcomePageApi";
 import {BlogsState, BlogStatistics} from "../state/BlogsState";
 import BlogsReducer from "../../lib/reducer/BlogsReducer";
 import Card from "../molecules/Card";
-
-
-const XSlidInContainer = styled.div`
-  animation: XSlideIn 1s;
-
-  @keyframes XSlideIn {
-    0% {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`
-
-const YSlideInContaier = styled.div`
-  animation: ScaleIn 1s;
-
-  @keyframes ScaleIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-`
-
+import XSlideInContainer from "../animation/XSlideInContainer";
+import YSlideInContainer from "../animation/YSlideInContainer";
 
 const ProfileLink = styled(Link)`
   margin-top: 10px;
@@ -129,7 +99,7 @@ function Profile() {
 
     return (
         <div className="profile">
-            <XSlidInContainer>
+            <XSlideInContainer>
                 <Avatar src={henohenomoheji}/>
                 <div>
                     <SectionTitle text="About Me"/>
@@ -138,7 +108,6 @@ function Profile() {
                             Software Engineer at Uzabase.<br/>
                             Java(エコシステム含む), Linux, Vim, コンテナ技術, アジャイル開発あたりに興味があります。<br/>
                         </p>
-
                         <Title>About This Site</Title>
                         <p>
                             このサイトは、私がCSSやフロントエンドの勉強のために作っています。<br/>
@@ -161,15 +130,15 @@ function Profile() {
                                      src="https://yuya-hirooka.hatenablog.com/"/>
                     </Contents>
                 </div>
-            </XSlidInContainer>
-            <YSlideInContaier>
+            </XSlideInContainer>
+            <YSlideInContainer>
                 <SectionTitle text="Blog Statistics"/>
-            </YSlideInContaier>
+            </YSlideInContainer>
             <BlogStatisticsContainer>
                 <Contents>
-                    <YSlideInContaier>
+                    <YSlideInContainer>
                         <Title>Latest Posts</Title>
-                    </YSlideInContaier>
+                    </YSlideInContainer>
                     <CardContainer>
                         {blogs.filteredBlogs.feed.slice(0, 3).map(entry => (
                             <Card
@@ -183,9 +152,9 @@ function Profile() {
                     </CardContainer>
                 </Contents>
                 <Contents>
-                    <YSlideInContaier>
+                    <YSlideInContainer>
                         <Title>Top 10 Tags</Title>
-                    </YSlideInContaier>
+                    </YSlideInContainer>
                     <BarChart data={blogStatistics.data}/>
                 </Contents>
             </BlogStatisticsContainer>

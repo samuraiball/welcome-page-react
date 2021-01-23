@@ -5,50 +5,50 @@ import Summary from "../atoms/Summary";
 import Title from "../atoms/Title";
 
 const CardLink = styled.a`
-tpointer-events: none;
-tcursor: default;
-text-decoration:none;
+  tpointer-events: none;
+  tcursor: default;
+  text-decoration: none;
 `
 
 const Wrapper = styled.div`
-margin: 10px 10px 12px 10px;
-padding-bottom: 10px;
-border: solid 1px #C0C0C0;
-border-radius: 2px;
+  margin: 10px 10px 12px 10px;
+  padding-bottom: 10px;
+  border: solid 1px #C0C0C0;
+  border-radius: 2px;
 
-&:hover{
-transition: 0.2s ;
-background: #f8ca8d;
-}
+  &:hover {
+    transition: 0.2s;
+    background: #f8ca8d;
+  }
 
-@media (max-width: 480px) {
-margin: 0 0 10px 0;
-padding-bottom: 5px;
-}
+  @media (max-width: 480px) {
+    margin: 0 0 10px 0;
+    padding-bottom: 5px;
+  }
 
 
 `
 
 const Footer = styled.div`
-margin-top: 5px;
+  margin-top: 5px;
 `
 const Tags = styled.span`
-margin: 10px 0 10px 0;
+  margin: 10px 0 10px 0;
 
-@media (max-width: 480px) {
-display: block;
-margin: 5px 10px 5px 5px;
-}
+  @media (max-width: 480px) {
+    display: block;
+    margin: 5px 10px 5px 5px;
+  }
 `
 
 const CardPublishDate = styled.span`
-font-size: 15px;
-margin-left: 20px;
-color: #808080;
+  font-size: 15px;
+  margin-left: 20px;
+  color: #808080;
 
-@media (max-width: 480px) {
-margin: 0 0 0 10px;
-}
+  @media (max-width: 480px) {
+    margin: 0 0 0 10px;
+  }
 `
 
 type Props = {

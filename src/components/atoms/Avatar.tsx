@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Image = styled.img`
-    height: 150px;
+  height: 150px;
 `
 
 type Props = {

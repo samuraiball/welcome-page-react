@@ -2,42 +2,42 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-margin-top: 10px;
+  margin-top: 10px;
 `
 
 const Contents = styled.div`
-display: flex;
-margin-bottom: 5px;
-margin-left: 5px;
+  display: flex;
+  margin-bottom: 5px;
+  margin-left: 5px;
 `
 const Bar = styled.div`
---size:  ${({theme}) => theme.value};
-height: 20px;
-width: var( --size);
-margin-right: 4px;
-background: #004643;
-border-radius: 3px;
-opacity: ${({theme}) => theme.opacity};
-animation: SlideIn 1.8s;
+  --size: ${({theme}) => theme.value};
+  height: 20px;
+  width: var(--size);
+  margin-right: 4px;
+  background: #004643;
+  border-radius: 3px;
+  opacity: ${({theme}) => theme.opacity};
+  animation: SlideIn 1.8s;
 
-@keyframes  SlideIn {
-  0% {
-    width: 0;
+  @keyframes SlideIn {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: var(--size);
+    }
   }
-  100% {
-    width: var( --size);
-  }
-}
 `
 
 const BarWrapper = styled.div`
-width: 300px;
-display: flex;
+  width: 300px;
+  display: flex;
 `
 
 const Item = styled.div`
-width: 40%;
-font-size: 14px;
+  width: 40%;
+  font-size: 14px;
 `
 
 type Props = {

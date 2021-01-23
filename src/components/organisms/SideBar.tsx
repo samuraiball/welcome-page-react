@@ -3,70 +3,72 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 
 
-
 const XSlidInContainer = styled.div`
-animation:  XSlideIn 1s;
+  animation: XSlideIn 1s;
 
-@keyframes  XSlideIn {
-  0% {
-   opacity: 0; 
-   transform: translateX(-20px);
+  @keyframes XSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  100% {
-   opacity: 1; 
-   transform: translateX(0);
-  }
-}
 `
 
 const Wrapper = styled.div`
-background: #004643;
-position: fixed;
-z-index: 1;
-top: 0;
-left: 0;
-overflow-x: hidden;
-padding-top: 20px;
-width: 170px;
-height: 100vh;
-box-shadow: black 0 0 5px;
+  background: #004643;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  width: 170px;
+  height: 100vh;
+  box-shadow: black 0 0 5px;
 
-@media (max-width: 480px) { 
-position: fixed;
-overflow-x: hidden;
-width: 100vh;
-height: 110px;
-}
+  @media (max-width: 480px) {
+    position: fixed;
+    overflow-x: hidden;
+    width: 100vh;
+    height: 110px;
+  }
 `
 
 const TopLink = styled(Link)`
-color: white;
-font-size: 24px;
-tpointer-events: none;
-tcursor: default;
-text-decoration: none;
-&>*{
-margin-left: 20px;
-}
+  color: white;
+  font-size: 24px;
+  tpointer-events: none;
+  tcursor: default;
+  text-decoration: none;
+
+  & > * {
+    margin-left: 20px;
+  }
 `
 
 const ChildLink = styled(Link)`
-font-size: 18px;
-tpointer-events: none;
-tcursor: default;
-text-decoration: none;
-&>*{
-margin-top: 8px;
-margin-left: 40px;
-  &:hover{
-   transition: 0.2s ;
-   color: #d4d1d1;
+  font-size: 18px;
+  tpointer-events: none;
+  tcursor: default;
+  text-decoration: none;
+
+  & > * {
+    margin-top: 8px;
+    margin-left: 40px;
+
+    &:hover {
+      transition: 0.2s;
+      color: #d4d1d1;
+    }
   }
-}
 `
 
 const Text = styled.div`
-color: white;
+  color: white;
 `
 
 const SideBar = () => {

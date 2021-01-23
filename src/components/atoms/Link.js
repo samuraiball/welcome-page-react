@@ -2,24 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 const Text = styled.div`
-margin-top: 10px;
-font-size: 15px;
+  margin-top: 10px;
+  font-size: 15px;
 `
 
 const Anker = styled.a`
-tpointer-events: none;
-tcursor: default;
-text-decoration:none;
-color: #004643;
+  tpointer-events: none;
+  tcursor: default;
+  text-decoration: none;
+  color: #004643;
 
-&:hover{
-color: #f9bc60; 
-}
+  &:hover {
+    color: #f9bc60;
+  }
 
-&>ion-icon{
-vertical-align: -3px;
-margin-right: 2px;
-}
+  & > ion-icon {
+    vertical-align: -3px;
+    margin-right: 2px;
+  }
 `
 
 
@@ -27,7 +27,7 @@ const Link = (props) => {
     return (
         <Text>
             <Anker href={props.src} target="_blank">
-                <ion-icon name={props.logo} />
+                <ion-icon name={props.logo}/>
                 {props.text}
             </Anker>
         </Text>

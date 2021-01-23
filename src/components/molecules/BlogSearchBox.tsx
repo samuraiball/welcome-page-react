@@ -3,31 +3,31 @@ import styled from "styled-components";
 import {BlogsAction} from "../../lib/reducer/actions/BlogsAction";
 
 const Wrapper = styled.input`
-margin: 20px 0 10px 10px;
-height: 30px;
-width: 250px;
-border-radius: 5px;
+  margin: 20px 0 10px 10px;
+  height: 30px;
+  width: 250px;
+  border-radius: 5px;
 
 
-@media (max-width: 480px) {
-margin: 20px 0 10px 0;
-}
+  @media (max-width: 480px) {
+    margin: 20px 0 10px 0;
+  }
 
-::-webkit-input-placeholder {
-font-size: 15px;
-}
+  ::-webkit-input-placeholder {
+    font-size: 15px;
+  }
 
-:-moz-placeholder { /* Firefox 18- */
-font-size: 15px;
-}
+  :-moz-placeholder { /* Firefox 18- */
+    font-size: 15px;
+  }
 
-::-moz-placeholder {  /* Firefox 19+ */
-font-size: 15px;
-}
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-size: 15px;
+  }
 
-:-ms-input-placeholder {  
-font-size: 15px;
-}
+  :-ms-input-placeholder {
+    font-size: 15px;
+  }
 `
 
 type Props = {
