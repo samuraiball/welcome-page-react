@@ -139,14 +139,11 @@ function Profile() {
                             Java(エコシステム含む), Linux, Vim, コンテナ技術, アジャイル開発あたりに興味があります。<br/>
                         </p>
 
-                        <Title>Latest Posts</Title>
-                    </Contents>
-                </div>
-                <div>
-                    <SectionTitle text="About This Site"/>
-                    <Contents>
+                        <Title>About This Site</Title>
                         <p>
-                            このサイトはReact
+                            このサイトは、私がCSSやフロントエンドの勉強のために作っています。<br/>
+                            React、Typescript、styled-component等を用いて作成しています。<br/>
+                            すべて生のCSSで作っていて（styled-componentは使っていますが）、CSSフレームワークやコンポーネントフレームワークは使っていません。
                         </p>
                     </Contents>
                 </div>
