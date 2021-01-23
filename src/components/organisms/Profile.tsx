@@ -13,94 +13,94 @@ import Card from "../molecules/Card";
 
 
 const XSlidInContainer = styled.div`
-animation:  XSlideIn 1s;
+  animation: XSlideIn 1s;
 
-@keyframes  XSlideIn {
-  0% {
-   opacity: 0; 
-   transform: translateX(-20px);
+  @keyframes XSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  100% {
-   opacity: 1; 
-   transform: translateX(0);
-  }
-}
 `
 
 const YSlideInContaier = styled.div`
-animation:  ScaleIn 1s;
+  animation: ScaleIn 1s;
 
-@keyframes  ScaleIn {
-  0% {
-   opacity: 0; 
-   transform: translateY(-20px);
+  @keyframes ScaleIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
-  100% {
-   opacity: 1; 
-   transform: translateY(0px);
-  }
-}
 `
 
 
 const ProfileLink = styled(Link)`
-margin-top: 10px;
+  margin-top: 10px;
 `
 
 const Contents = styled.div`
-width: auto;
-margin-left: 10px;
+  width: auto;
+  margin-left: 10px;
 
-& > p{
-  margin: 5px 0 0 0;
-  line-height: 1.7rem;
-}
+  & > p {
+    margin: 5px 0 0 0;
+    line-height: 1.7rem;
+  }
 
-@media (max-width: 480px) { 
-  margin-left: 0;
-  
-}
+  @media (max-width: 480px) {
+    margin-left: 0;
+
+  }
 `
 
 const Title = styled.div`
-width: 478px;
-font-size: 23px;
-margin-top: 10px;
-margin-bottom: 7px;
+  width: 478px;
+  font-size: 23px;
+  margin-top: 10px;
+  margin-bottom: 7px;
 
-@media (max-width: 480px) { 
-  width: auto;
-}
+  @media (max-width: 480px) {
+    width: auto;
+  }
 `
 
 const BlogStatisticsContainer = styled.div`
-width: 1024px;
-display: flex;
+  width: 1024px;
+  display: flex;
 
-@media (max-width: 480px) { 
-  width: auto;
-  display: block;
-}
+  @media (max-width: 480px) {
+    width: auto;
+    display: block;
+  }
 `
 
 const CardContainer = styled.div`
-margin-left: -10px;
-animation: SlideCardIn 1.5s;
+  margin-left: -10px;
+  animation: SlideCardIn 1.5s;
 
-@media (max-width: 480px) { 
-  margin-left: -5px;
-}
+  @media (max-width: 480px) {
+    margin-left: -5px;
+  }
 
-@keyframes  SlideCardIn {
-  0% {
-   opacity: 0; 
-   transform: translateY(-10px);
+  @keyframes SlideCardIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  100% {
-   opacity: 1; 
-   transform: translateY(0);
-  }
-}
 `
 
 
@@ -136,7 +136,17 @@ function Profile() {
                     <Contents>
                         <p>
                             Software Engineer at Uzabase.<br/>
-                            Curious about Java, Linux, Vim, Container Technology and Scrum.
+                            Java(エコシステム含む), Linux, Vim, コンテナ技術, アジャイル開発あたりに興味があります。<br/>
+                        </p>
+
+                        <Title>Latest Posts</Title>
+                    </Contents>
+                </div>
+                <div>
+                    <SectionTitle text="About This Site"/>
+                    <Contents>
+                        <p>
+                            このサイトはReact
                         </p>
                     </Contents>
                 </div>

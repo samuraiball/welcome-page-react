@@ -74,7 +74,7 @@ const SideBar = () => {
         <Wrapper id="nav">
             <TopLink to="/"><Text>Heno</Text></TopLink>
             <XSlidInContainer>
-                <ChildLink to="/"><Text>├ About Me</Text></ChildLink>
+                <ChildLink to="/"><Text>├ DashBord</Text></ChildLink>
                 <ChildLink to="/blogs"><Text>└ Blogs</Text></ChildLink>
             </XSlidInContainer>
         </Wrapper>
