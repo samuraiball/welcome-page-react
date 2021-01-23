@@ -14,7 +14,7 @@ class WelcomePageApi {
         );
     }
 
-    async fetchBlogStatistics(){
+    async fetchBlogStatistics() {
         return axios(
             Config().welcomePageEndpoint + "/hatena/statics",
             {

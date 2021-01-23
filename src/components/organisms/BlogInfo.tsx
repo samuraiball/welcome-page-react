@@ -7,38 +7,10 @@ import WelcomePageApi from "../../lib/dirver/WelcomePageApi";
 import Count from "../atoms/Count";
 import styled from "styled-components";
 import {BlogsState} from "../state/BlogsState";
+import XSlideInContainer from "../animation/XSlideInContainer";
+import YSlideInContainer from "../animation/YSlideInContainer";
 
 const BlogCount = styled(Count)`
-`
-
-const XSlidInContainer = styled.div`
-  animation: XSlideIn 1s;
-
-  @keyframes XSlideIn {
-    0% {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`
-
-const YSlideInContaier = styled.div`
-  animation: ScaleIn 1s;
-
-  @keyframes ScaleIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
 `
 
 const blogsState: BlogsState = {
@@ -60,12 +32,12 @@ const BlogInfo = () => {
 
     return (
         <div className="blog-info">
-            <XSlidInContainer>
+            <XSlideInContainer>
                 <SectionTitle text="Posted Blogs"/>
                 <BlogSearchBox searchTerm={state.searchTerm} dispatch={dispatch}/>
                 <BlogCount number={state.filteredBlogs.feed.length}/>
-            </XSlidInContainer>
-            <YSlideInContaier>
+            </XSlideInContainer>
+            <YSlideInContainer>
                 {state.filteredBlogs.feed.map(entry => (
                     <Card
                         href={entry.link.href}
@@ -75,7 +47,7 @@ const BlogInfo = () => {
                         published={entry.published}
                     />
                 ))}
-            </YSlideInContaier>
+            </YSlideInContainer>
         </div>
     )
 }

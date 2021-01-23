@@ -101,35 +101,36 @@ function Profile() {
         <div className="profile">
             <XSlideInContainer>
                 <Avatar src={henohenomoheji}/>
-                <div>
-                    <SectionTitle text="About Me"/>
-                    <Contents>
-                        <p>
-                            Software Engineer at Uzabase.<br/>
-                            Java(エコシステム含む), Linux, Vim, コンテナ技術, アジャイル開発あたりに興味があります。<br/>
-                        </p>
-                        <Title>About This Site</Title>
-                        <p>
-                            このサイトは、私がCSSやフロントエンドの勉強のために作っています。<br/>
-                            React、Typescript、styled-component等を用いて作成しています。<br/>
-                            すべて生のCSSで作っていて（styled-componentは使っていますが）、CSSフレームワークやコンポーネントフレームワークは使っていません。
-                        </p>
-                    </Contents>
-                </div>
-                <div className="links">
-                    <SectionTitle text="Links"/>
-                    <Contents>
-                        <ProfileLink text="Twitter"
-                                     logo="logo-twitter"
-                                     src="https://twitter.com/yuya_hirooka"/>
-                        <ProfileLink text="GitHub"
-                                     logo="logo-github"
-                                     src="https://github.com/samuraiball"/>
-                        <ProfileLink text="はてなブログ"
-                                     logo="pencil-outline"
-                                     src="https://yuya-hirooka.hatenablog.com/"/>
-                    </Contents>
-                </div>
+                <SectionTitle text="About Me"/>
+                <Contents>
+                    <p>
+                        名前：ヒロオカ
+                    </p>
+                    <p>
+                        ユーザベースのソフトウェアエンジニア<br/>
+                        Java(エコシステム含む), Linux, Vim, コンテナ技術, アジャイル開発あたりに興味があります。<br/>
+                    </p>
+                </Contents>
+                <SectionTitle text="About This Site"/>
+                <Contents>
+                    <p>
+                        このサイトは、私がCSSやフロントエンドの勉強のために作っています。<br/>
+                        React、Typescript、styled-component等を用いて作成しています。すべて生のCSSで作っていて（styled-componentは使っていますが）、CSSフレームワークやコンポーネントフレームワークは使っていません。
+                    </p>
+                </Contents>
+                <Contents/>
+                <SectionTitle text="Links"/>
+                <Contents>
+                    <ProfileLink text="Twitter"
+                                 logo="logo-twitter"
+                                 src="https://twitter.com/yuya_hirooka"/>
+                    <ProfileLink text="GitHub"
+                                 logo="logo-github"
+                                 src="https://github.com/samuraiball"/>
+                    <ProfileLink text="はてなブログ"
+                                 logo="pencil-outline"
+                                 src="https://yuya-hirooka.hatenablog.com/"/>
+                </Contents>
             </XSlideInContainer>
             <YSlideInContainer>
                 <SectionTitle text="Blog Statistics"/>

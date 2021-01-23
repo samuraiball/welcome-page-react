@@ -1,15 +1,27 @@
 import React from 'react';
 
-import './App.css';
 import Profile from "./components/organisms/Profile";
 import BlogInfo from "./components/organisms/BlogInfo";
 import SideBar from "./components/organisms/SideBar";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Helmet} from "react-helmet";
+import styled from "styled-components";
+
+const WelcomePage = styled.div`
+  display: flex;
+`
+const Contents = styled.div`
+  margin-left: 200px;
+  margin-bottom: 30px;
+
+  @media (max-width: 480px) {
+    margin: 140px 10px 20px 10px;
+  }
+`
 
 function App() {
     return (
-        <div className="welcome-page">
+        <WelcomePage>
             <Helmet>
                 <meta property="og:title" content="Welcome Page"/>
                 <meta property="og:type" content="text/html"/>
@@ -21,15 +33,15 @@ function App() {
             </Helmet>
             <Router>
                 <SideBar/>
-                <div className="contents">
+                <Contents>
                     <Switch>
                         <Route exact path="/" component={Profile}/>
                         <Route path="/blogs" component={BlogInfo}/>
                     </Switch>
-                </div>
+                </Contents>
             </Router>
-        </div>
-    );
+        </WelcomePage>
+    )
 }
 
 
