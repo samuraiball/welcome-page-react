@@ -3,15 +3,7 @@ import Config from "../Config";
 
 class WelcomePageApi {
     async fetchBlogs() {
-        return axios(
-            Config().welcomePageEndpoint + "/hatena/entries",
-            {
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Methods": "GET",
-                }
-            }
-        );
+        return axios(Config().welcomePageEndpoint + "/hatena/entries");
     }
 
     async fetchBlogStatistics() {
